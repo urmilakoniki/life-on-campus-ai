@@ -1,11 +1,7 @@
-import { CampusAI } from "@/components/CampusAI";
+import { LandingPage } from "@/components/LandingPage";
 
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <CampusAI />
-    </div>
-  );
+  return <LandingPage />;
 };
 
 export default Index;
