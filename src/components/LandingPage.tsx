@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import confusedStudentsImage from "@/assets/confused-students.jpg";
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -98,49 +99,79 @@ export const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-bg">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center bg-gradient-primary text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8">
-            <GraduationCap className="h-16 w-16 mx-auto mb-6 opacity-90" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Campus<span className="text-campus-green-light">AI</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Your intelligent 24/7 digital campus assistant. Get instant answers about dining, 
-              classes, facilities, and everything campus life has to offer.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              size="lg" 
-              onClick={() => navigate("/chat")}
-              className="bg-white text-campus-blue hover:bg-campus-green-light hover:text-campus-green-dark transition-smooth text-lg px-8 py-3"
-            >
-              Start Chatting Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-campus-blue transition-smooth text-lg px-8 py-3"
-            >
-              Learn More
-            </Button>
-          </div>
+      <section className="relative py-20 px-4 bg-gradient-primary text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-left">
+              <div className="mb-8">
+                <div className="flex items-center mb-6">
+                  <GraduationCap className="h-12 w-12 mr-4 opacity-90" />
+                  <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                    Campus<span className="text-campus-green-light">AI</span>
+                  </h1>
+                </div>
+                <h2 className="text-2xl md:text-3xl mb-6 opacity-90 leading-relaxed">
+                  Never Feel Lost on Campus Again
+                </h2>
+                <p className="text-xl mb-8 opacity-90 leading-relaxed">
+                  Your intelligent 24/7 digital campus assistant. Get instant answers about dining, 
+                  classes, facilities, and everything campus life has to offer.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button 
+                  size="lg" 
+                  onClick={() => navigate("/chat")}
+                  className="bg-white text-campus-blue hover:bg-campus-green-light hover:text-campus-green-dark transition-smooth text-lg px-8 py-3"
+                >
+                  Start Chatting Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-campus-blue transition-smooth text-lg px-8 py-3"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-2">500+</h3>
-              <p className="opacity-90">Daily conversations helping students</p>
+            {/* Right Image */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src={confusedStudentsImage} 
+                  alt="Confused students looking at campus maps and schedules, needing guidance with college life"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-gray-800 text-center">
+                    <p className="font-semibold text-lg">Sound familiar?</p>
+                    <p className="text-sm opacity-80">Let CampusAI be your guide!</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-2">&lt;2 sec</h3>
-              <p className="opacity-90">Average response time</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-2">24/7</h3>
-              <p className="opacity-90">Always available support</p>
+          </div>
+          {/* Stats Section */}
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <h3 className="text-2xl font-semibold mb-2">500+</h3>
+                <p className="opacity-90">Daily conversations helping students</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <h3 className="text-2xl font-semibold mb-2">&lt;2 sec</h3>
+                <p className="opacity-90">Average response time</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <h3 className="text-2xl font-semibold mb-2">24/7</h3>
+                <p className="opacity-90">Always available support</p>
+              </div>
             </div>
           </div>
         </div>
